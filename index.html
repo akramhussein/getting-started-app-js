@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Getting started with JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/deepstream.io-client-js/2.1.1/deepstream.js"></script>
+	<script type="text/javascript" src="js/example.js"></script>
+	<link rel="stylesheet" href='//fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/screen.css">
+</head>
+<body>
+	<div class="group realtimedb">
+		<h2>Realtime Datastore</h2>
+		<div class="input-group half left">
+			<label>Firstname</label>
+			<input type="text" id="firstname" />
+		</div>
+		<div class="input-group half">
+			<label>Lastname</label>
+			<input type="text" id="lastname" />
+		</div>
+	</div>
+	<div class="group pubsub">
+		<div class="half left">
+			<h2>Publish</h2>
+			<button class="half left">Send test-event with</button>
+			<input type="text" class="half"/>
+		</div>
+		<div class="half">
+			<h2>Subscribe</h2>
+			<ul id="pubsub">
+				<li>Received test-event with <em>blablub</em></li>
+			</ul>
+		</div>
+	</div>
+	<div class="group reqres">
+		<div class="half left">
+			<h2>Request</h2>
+			<button class="half left">How are you today?</button>
+			<span class="response half item">-</span>
+		</div>
+		<div class="half">
+			<h2>Response</h2>
+			<div class="half left item">Answer next request with:</div>
+			<input type="text" value="great!" class="half"/>
+		</div>
+	</div>
+</body>
+</html>
