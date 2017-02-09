@@ -23,6 +23,11 @@ body{
 	overflow: hidden;
 }
 
+.group.connectionState{
+	margin: 10px auto 0;
+	padding: 0 20px;
+}
+
 h2{
 	font-size: 20px;
 	border-bottom: 1px solid #ccc;

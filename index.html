@@ -12,6 +12,9 @@
 	<link rel="stylesheet" type="text/css" href="css/screen.css">
 </head>
 <body>
+	<div class="group connectionState">
+		Connection-State is: <em id="connection-state">INITIAL</em>
+	</div>
 	<div class="group realtimedb">
 		<h2>Realtime Datastore</h2>
 		<div class="input-group half left">
@@ -26,31 +29,24 @@
 	<div class="group pubsub">
 		<div class="half left">
 			<h2>Publish</h2>
-			<button class="half left">Send test-event with</button>
-			<input type="text" class="half"/>
+			<button class="half left" id="send-event">Send test-event with</button>
+			<input type="text" class="half" id="event-data"/>
 		</div>
 		<div class="half">
 			<h2>Subscribe</h2>
-			<ul id="pubsub">
-				<li>Received test-event with <em>blablub</em></li>
-			</ul>
+			<ul id="events-received"></ul>
 		</div>
 	</div>
 	<div class="group reqres">
 		<div class="half left">
-			<h2>Request
-				<small>
-					<input type="radio" name="active" value="request" id="request" checked />
-					<label for="request">active</label>
-				</small>
-			</h2>
-			<button class="half left">How are you today?</button>
-			<span class="response half item">-</span>
+			<h2>Request</h2>
+			<button class="half left" id="make-rpc"></button>
+			<span class="response half item" id="display-response">-</span>
 		</div>
 		<div class="half">
 			<h2>Response
 				<small>
-					<input type="radio" name="active" value="response" id="response" />
+					<input type="checkbox" name="active" value="response" id="response" />
 					<label for="response">active</label>
 				</small>
 			</h2>
