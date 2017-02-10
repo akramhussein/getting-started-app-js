@@ -52,7 +52,10 @@ $(function(){
 		ds.event.emit( 'test-event', $( '#event-data' ).val() );
 	});
 
+	// Subscribe to `test-event`
 	ds.event.subscribe( 'test-event', function( eventData ){
+		// Whenever we receive a message for this event,
+		// append a list item to our list
 		var html = '<li>Received test-event with <em>' + eventData + '</em></li>';
 		$( '#events-received' ).append( html );
 	});
@@ -61,15 +64,25 @@ $(function(){
 	* Request Response
 	************************************/
 	$('#make-rpc').click(function(){
+		// read the value from the input field
+		// and convert it into a number
 		var data = {
 			value: parseFloat( $('#request-value' ).val() )
 		};
+
+		// Make a request for `multiply-number` with our data object
+		// and wait for the response
 		ds.rpc.make( 'multiply-number', data, function( err, resp ){
+
+			//display the response (or an error)
 			$( '#display-response' ).text( resp || err.toString() );
 		});
 	});
 
+	// Register as a provider for multiply-number
 	ds.rpc.provide( 'multiply-number', function( data, response ){
+		// respond to the request by multiplying the incoming number
+		// with the one from the response input
 		response.send( data.value * parseFloat( $('#response-value' ).val() ) );
 	});
 });
