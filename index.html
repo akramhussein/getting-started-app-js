@@ -40,18 +40,16 @@
 	<div class="group reqres">
 		<div class="half left">
 			<h2>Request</h2>
-			<button class="half left" id="make-rpc"></button>
-			<span class="response half item" id="display-response">-</span>
+			<button class="half left" id="make-rpc">Make multiply request</button>
+			<div class="half">
+				<input type="text" id="request-value" class="half left" value="3"/>
+				<span class="response half item" id="display-response">-</span>
+			</div>
 		</div>
 		<div class="half">
-			<h2>Response
-				<small>
-					<input type="checkbox" name="active" value="response" id="response" />
-					<label for="response">active</label>
-				</small>
-			</h2>
-			<div class="half left item">Answer next request with:</div>
-			<input type="text" value="great!" class="half"/>
+			<h2>Response</h2>
+			<div class="half left item">Multiply number with:</div>
+			<input type="text" value="7" class="half" id="response-value" />
 		</div>
 	</div>
 	<script type="text/javascript" src="js/example.js"></script>

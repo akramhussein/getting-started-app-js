@@ -46,7 +46,9 @@ $(function(){
 	/************************************
 	* Publish Subscribe
 	************************************/
+	// Whenever the user clicks the button
 	$( '#send-event' ).click(function(){
+		// Publish an event called `test-event` and send
 		ds.event.emit( 'test-event', $( '#event-data' ).val() );
 	});
 
@@ -59,10 +61,15 @@ $(function(){
 	* Request Response
 	************************************/
 	$('#make-rpc').click(function(){
-		ds.rpc.make( 'get-current-mood', function( err, resp ){
+		var data = {
+			value: parseFloat( $('#request-value' ).val() )
+		};
+		ds.rpc.make( 'multiply-number', data, function( err, resp ){
 			$( '#display-response' ).text( resp || err.toString() );
 		});
 	});
 
-
+	ds.rpc.provide( 'multiply-number', function( data, response ){
+		response.send( data.value * parseFloat( $('#response-value' ).val() ) );
+	});
 });
